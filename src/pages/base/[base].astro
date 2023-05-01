@@ -1,0 +1,26 @@
+---
+import flatsList from '../../content/flats.json';
+import Layout from '../../layouts/Layout.astro';
+export function getStaticPaths () {
+    const allFlatTypes = Object.keys(flatsList);
+    const justBaseFlats = [...allFlatTypes].filter((flatKey) => flatsList[flatKey].type === 'base');
+
+    return justBaseFlats.map((flatKey) => ({
+        params: {
+            base: flatKey
+        },
+        props: {
+            title: flatsList[flatKey].title,
+            content: flatsList[flatKey]
+        }
+    }));
+}
+
+const { base } = Astro.params;
+const { content } = Astro.props;
+---
+
+<Layout title="Welcome to Flats.">
+    <div>This is the page for {base}.</div>
+    <div>{content.title}</div>
+</Layout>
