@@ -1,7 +1,12 @@
 {
+    "beheadment": {
+        "type": "base",
+        "title": "Beheadment",
+        "body": "A word or phrase becomes another when its first letter is removed."
+    },
     "deletion": {
         "type": "base",
         "title": "Deletion",
-        "body": "A deletion involves deleting one or more letters to modify a word."
+        "body": "A word or phrase becomes another when an interior letter is removed."
     }
 }
