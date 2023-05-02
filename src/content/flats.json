@@ -8,5 +8,10 @@
         "type": "base",
         "title": "Deletion",
         "body": "A word or phrase becomes another when an interior letter is removed."
+    },
+    "phonetic": {
+        "type": "modifier",
+        "title": "Phonetic...",
+        "body": "Puzzle variations in which sounds are the basic unit instead of letters."
     }
 }
