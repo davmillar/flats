@@ -2,19 +2,31 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import flatsList from '../content/flats.json';
+const basesList = flatsList.base;
+const modifiersList = flatsList.modifier;
 ---
 
-<Layout title="Welcome to Flats.">
+<Layout title="What's That Flat?">
 	<p class="instructions">
 		Learn about the various types of <acronym title="National Puzzlers' League">NPL</acronym> flat puzzles.
 	</p>
+	<h2>Base Types</h2>
 	<ul role="list" class="link-card-grid">
-		{Object.keys(flatsList).map((flatKey) => (
+		{Object.keys(basesList).map((flatKey) => (
 			<Card
-				href={`${flatsList[flatKey].type}/${flatKey}`}
-				title={flatsList[flatKey].title}
-				body={flatsList[flatKey].body}
-		/>))}
+			href={`base/${flatKey}`}
+			title={basesList[flatKey].title}
+			body={basesList[flatKey].body}
+			/>))}
+	</ul>
+	<h2>Modifiers</h2>
+	<ul role="list" class="link-card-grid">
+		{Object.keys(modifiersList).map((flatKey) => (
+			<Card
+			href={`modifier/${flatKey}`}
+			title={modifiersList[flatKey].title}
+			body={modifiersList[flatKey].body}
+			/>))}
 	</ul>
 </Layout>
 

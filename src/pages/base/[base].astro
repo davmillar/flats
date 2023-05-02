@@ -2,7 +2,7 @@
 import flatsList from '../../content/flats.json';
 import Layout from '../../layouts/Layout.astro';
 export function getStaticPaths () {
-    const allFlatTypes = Object.keys(flatsList);
+    const allFlatTypes = Object.keys(flatsList.base);
     const justBaseFlats = [...allFlatTypes].filter((flatKey) => flatsList[flatKey].type === 'base');
 
     return justBaseFlats.map((flatKey) => ({

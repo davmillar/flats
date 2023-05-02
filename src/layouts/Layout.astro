@@ -19,9 +19,12 @@ const { title } = Astro.props;
 	<body>
 		<main>
 			<header>
-				<h1><a class="text-gradient" href="/">Flats</a></h1>
+				<h1><a class="text-gradient" href="/">What's That Flat?</a></h1>
 			</header>
 			<slot />
+			<footer>
+				By &semi; (semicolon (David Millar)) &#8212; Based on content from the Guide to the Enigma from the <a href="https://puzzlers.org"><acronym title="National Puzzlers' League">NPL</acronym></a>, reused/remixed with permission. &#8212; <a href="https://github.com/davmillar/flats">Hosted at GitHub</a>.
+			</footer>
 		</main>
 	</body>
 </html>
@@ -157,5 +160,8 @@ const { title } = Astro.props;
 		-webkit-text-fill-color: transparent;
 		background-size: 100%;
 		background-position: 0%;
+	}
+	footer {
+		font-size: .9em;
 	}
 </style>
