@@ -3,14 +3,14 @@ import flatsList from '../../content/flats.json';
 import Layout from '../../layouts/Layout.astro';
 export function getStaticPaths () {
     const justBaseFlats = Object.keys(flatsList.base);
-    
+
     return justBaseFlats.map((flatKey) => ({
         params: {
             base: flatKey
         },
         props: {
-            title: flatsList[flatKey].title,
-            content: flatsList[flatKey]
+            title: justBaseFlats[flatKey].title,
+            content: justBaseFlats[flatKey]
         }
     }));
 }
