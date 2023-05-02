@@ -4,6 +4,10 @@
             "title": "Beheadment",
             "body": "A word or phrase becomes another when its first letter is removed."
         },
+        "charade": {
+            "title": "Charade",
+            "body": "A word or phrase is broken into two or more shorter ones."
+        },
         "deletion": {
             "title": "Deletion",
             "body": "A word or phrase becomes another when an interior letter is removed."
