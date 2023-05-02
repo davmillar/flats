@@ -4,7 +4,6 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://davmillar.github.io',
-  base: '/flats',
+  site: 'https://puzzlers.wtf',
   integrations: [mdx()]
 });
