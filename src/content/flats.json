@@ -1,5 +1,10 @@
 {
     "base": {
+        "altered-state": {
+            "title": "Altered state",
+            "category": "change",
+            "body": "A two-letter state abbreviation is replaced by another."
+        },
         "beheadment": {
             "title": "Beheadment",
             "category": "remove",
