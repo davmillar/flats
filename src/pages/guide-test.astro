@@ -9,8 +9,23 @@ const renderedBases = await Promise.all(
 
 // import
 ---
+<style>
+    .toc a::after {
+        content: leader('.') target-counter(attr(data-entry), page);
+    }
+</style>
 <Layout title="What's That Flat?">
     {
         renderedBases.map(({Content}) => (<Content />))
     }
+    <h2>Index</h2>
+    <div class="toc">
+        {
+            bases.map(entry => (
+                <span>
+                    <b><a data-entry={entry.slug}>{entry.data.title}</a></b><br/>
+                </span>
+            ))
+        }
+    </div>
 </Layout>

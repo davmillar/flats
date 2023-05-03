@@ -20,6 +20,11 @@
             "category": "remove",
             "body": "A word or phrase becomes another when its last letter is removed."
         },
+        "cyclegram": {
+            "title": "Cyclegram",
+            "category": "group",
+            "body": "Each word in the base consists of two parts. The first part is identical to the second part of the preceding word."
+        },
         "deletion": {
             "title": "Deletion",
             "category": "remove",
