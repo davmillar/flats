@@ -1,14 +1,13 @@
 ---
 layout: '../../layouts/Layout.astro'
 ---
+import Example from '../../components/Example.astro';
+import Step from '../../components/Step.astro';
+import Finally from '../../components/Finally.astro';
 
 ## Beheadment
 
-A word or phrase becomes another when its first letter is removed.
-
-<span class="before">factor</span> <span class="before"><del>f</del>actor</span> <span class="after">actor</span>
-
-If the parts of the solution are all single words, the length of only the longest is given; if any part is a phrase, all parts are enumerated.
+A word or phrase becomes another when its first letter is removed. Examples: <Example type="removal">~f~actor</Example>; or <Example type="removal">~u~sable</Example>. If the parts of the solution are all single words, the length of only the longest is given; if any part is a phrase, all parts are enumerated.
 
 > BEHEADMENT (6)
 > 
@@ -17,37 +16,12 @@ If the parts of the solution are all single words, the length of only the longes
 >
 > =Wabbit
 
-<span class="before"><label>WHOLE</label> usable</span> <span class="before"><del>u</del>sable</span> <span class="after"><label>SHORTER</label> sable</span>
+The solution: <Example><Step><label>WHOLE</label> ~u~sable</Step> <Finally><label>SHORTER</label> sable</Finally></Example>
 
-Beheadments occasionally include more than two words.
+Beheadments occasionally include more than two words. A famous example is <Example>aspirate, spirate, pirate, irate, rate, ate</Example>.
 
-<p class="example-block">
-<span class="before">aspirate</span> <span class="before"><del>a</del>spirate</span><br/>
-<span class="before">spirate</span> <span class="before"><del>s</del>pirate</span><br/>
-<span class="before">pirate</span> <span class="before"><del>p</del>irate</span><br/>
-<span class="before">irate</span> <span class="before"><del>i</del>rate</span><br/>
-<span class="before">rate</span> <span class="before"><del>r</del>ate</span>
-<span class="after">ate</span>
-</p>
+In a **bigram beheadment**, a word or phrase becomes another when its first two letters are removed: <Example>~de~livery</Example>.
 
-### Bigram beheadment
+In a **phonetic beheadment**, a word or phrase becomes another when its first sound is removed. All parts are enumerated. Example: <Example><Step>~b~asalt</Step> <Finally>assault</Finally></Example>. For discussion of what constitutes a single sound, see <a href="modifier/phonetic">phonetic flats</a>.
 
-A word or phrase becomes another when its first two letters are removed.
-
-<span class="before">delivery</span> <span class="before"><del>de</del>livery</span> <span class="after">livery</span>
-
-### Phonetic beheadment
-
-a word or
-phrase becomes another when its first sound is removed. All parts
-are enumerated.
-
-<span class="before">basalt</span> <span class="before"><del>b</del>asalt</span> <span class="after">assault</span>
-
-For discussion of what constitutes a single sound, see <a href="modifier/phonetic">phonetic flats</a>.
-
-### Reversed beheadment
-
-After beheading the first word, reverse it to get the second.
-
-<span class="before">petal</span> <span class="before"><del>p</del>etal</span> <span class="before"><span class="reverse">etal</span></span> <span class="after">late</span>
+In a **reversed beheadment**, after beheading the first word, reverse it to get the second. Example: <Example><Step>~p~etal</Step> <Finally>late</Finally></Example>.
