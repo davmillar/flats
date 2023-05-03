@@ -29,17 +29,17 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--reverse-gradient: linear-gradient(95deg, green, red 100%);
+	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
-	}
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-		--reverse-gradient: linear-gradient(95deg, green, red 100%);
 	}
 	html {
 		font-family: system-ui, sans-serif;
@@ -128,6 +128,7 @@ const { title } = Astro.props;
 	@media print {
 		.example {
 			font-style: italic;
+			display: inline-block;
 		}
 		.before::after {
 			content: ",";
@@ -152,11 +153,12 @@ const { title } = Astro.props;
 			border-radius: 0.4rem;
 		}
 		del {
-			color: red;
-			padding: 0.3em 0.4em;
+			color: #900;
+			padding: 0.3em 0.2em;
 		}
 		.example {
-			position: relative;
+			display: inline-block;
+			line-height: 1.2;
 			font-size: 0.875em;
 			font-weight: bold;
 			border-radius: 4px;
@@ -166,17 +168,19 @@ const { title } = Astro.props;
 			color: rgb(var(--accent));
 		}
 		.before, .after {
+			display: inline-block;
+			line-height: 1;
 			position: relative;
 			font-weight: bold;
 			border-radius: 4px;
-			padding: 0.3em 0.45em;
+			padding: 0.1em 0.2em;
 			text-transform: uppercase;
 		}
 		.before {
 			background: rgba(var(--accent), 12%);
 			color: rgb(var(--accent));
 			border-radius: 4px 0 0 4px;
-			margin-right: 1.5em;
+			margin-right: 1em;
 		}
 		.before::after {
 			content: "";
@@ -189,7 +193,6 @@ const { title } = Astro.props;
 			height: 0;
 			border: .6em solid;
 			border-color: transparent transparent transparent rgba(var(--accent), 12%);
-			border-width: 1em;
 		}
 		.after {
 			background: rgba(var(--accent), 12%);

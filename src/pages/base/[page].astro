@@ -1,0 +1,23 @@
+---
+import { getEntryBySlug } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import flatsList from '../../content/flats.json';
+
+export function getStaticPaths () {
+    const basesList = flatsList.base || {};
+    return Object.keys(basesList).map((baseName) => (
+        {
+            params: {
+                page: baseName
+            }
+        }
+    ));
+}
+
+const { page } = Astro.params;
+const entry = await getEntryBySlug('base', page);
+const { Content } = await entry.render();
+---
+<Layout title={page}>
+    <Content/>
+</Layout>
