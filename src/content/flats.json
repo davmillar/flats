@@ -2,14 +2,22 @@
     "base": {
         "beheadment": {
             "title": "Beheadment",
+            "category": "remove",
             "body": "A word or phrase becomes another when its first letter is removed."
         },
         "charade": {
             "title": "Charade",
+            "category": "combine",
             "body": "A word or phrase is broken into two or more shorter ones."
+        },
+        "curtailment": {
+            "title": "Curtailment",
+            "category": "remove",
+            "body": "A word or phrase becomes another when its last letter is removed."
         },
         "deletion": {
             "title": "Deletion",
+            "category": "remove",
             "body": "A word or phrase becomes another when an interior letter is removed."
         }
     },
