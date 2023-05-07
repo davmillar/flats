@@ -1,7 +1,8 @@
 ---
+const { printArrow = false } = Astro.props;
 ---
 
-<span class="before"><slot /></span>
+<span class={`step ${printArrow ? ' printArrow' : ''}`}><slot /></span>
 <style>
     
 </style>

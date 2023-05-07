@@ -1,9 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import flatsList from '../content/flats.json';
-const basesList = flatsList.base;
-const modifiersList = flatsList.modifier;
+
+import { getCollection } from 'astro:content';
+
+const bases = await getCollection('base');
+const modifiers = await getCollection('modifier');
+
 ---
 
 <Layout title="What's That Flat?">
@@ -12,20 +15,20 @@ const modifiersList = flatsList.modifier;
 	</p>
 	<h2>Base Types</h2>
 	<ul role="list" class="link-card-grid">
-		{Object.keys(basesList).map((flatKey) => (
+		{bases.map((entry) => (
 			<Card
-			href={`base/${flatKey}`}
-			title={basesList[flatKey].title}
-			body={basesList[flatKey].body}
+			href={`base/${entry.slug}`}
+			title={entry.data.title}
+			body={entry.data.brief || ''}
 			/>))}
 	</ul>
 	<h2>Modifiers</h2>
 	<ul role="list" class="link-card-grid">
-		{Object.keys(modifiersList).map((flatKey) => (
+		{modifiers.map((entry) => (
 			<Card
-			href={`modifier/${flatKey}`}
-			title={modifiersList[flatKey].title}
-			body={modifiersList[flatKey].body}
+			href={`modifier/${entry.slug}`}
+			title={entry.data.title}
+			body={entry.data.brief || ''}
 			/>))}
 	</ul>
 </Layout>

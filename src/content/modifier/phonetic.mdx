@@ -1,6 +1,10 @@
 ---
-layout: '../../layouts/Layout.astro'
+title: 'Phonetic'
+brief: 'Puzzle variations in which sounds are the basic unit instead of letters.'
 ---
+import Example from '../../components/Example.astro';
+import Step from '../../components/Step.astro';
+import Finally from '../../components/Finally.astro';
 
 ## Phonetic
 
@@ -10,20 +14,20 @@ Puzzle variations in which sounds are the basic unit instead of letters.
 
 ### Phonetic [beheadment](base/beheadment)
 
-<span class="before">quest</span>
-<span class="before"><del>q</del>uest</span>
-<span class="after">west</span>
+<Step>quest</Step>
+<Step><del>q</del>uest</Step>
+<Finally>west</Finally>
 
 ### Phonetic [charade](base/charade)
 
-<span class="before">lox + myth</span>
-<span class="after">locksmith</span>
+<Step>lox + myth</Step>
+<Finally>locksmith</Finally>
 
 ### Phonetic [curtailment](base/curtailment)
 
-<span class="before">cute</span>
-<span class="before">cu<del>t</del>e</span>
-<span class="after">queue</span>
+<Step>cute</Step>
+<Step>cu<del>t</del>e</Step>
+<Finally>queue</Finally>
   
 In a phonetic curtailment, TWO can be longer than ONE; what counts is the number of sounds, not the number of letters. In fact, the greater the change in spelling, the more interesting the base.
 
@@ -31,20 +35,20 @@ In a phonetic curtailment, TWO can be longer than ONE; what counts is the number
 
 A flat is phonetic if any part is phonetic, even if some parts are not. For example, this phonetic charade:
 
-<span class="before"><label>ONE</label> weigh + <label>TWO</label> ding</span>
-<span class="after"><label>ALL</label> wading</span>
+<Step><label>ONE</label> weigh + <label>TWO</label> ding</Step>
+<Finally><label>ALL</label> wading</Finally>
 
 No flat is labeled phonetic if it can also work as a letter-based puzzle.
 
-<span class="before">mite</span>
-<span class="before"><del>m</del><ins>r</ins>ite</span>
-<span class="after">rite</span>
+<Step>mite</Step>
+<Step><del>m</del><ins>r</ins>ite</Step>
+<Finally>rite</Finally>
 
 'Mite' to 'rite' is both a first-[letter change](base/letter-change) and a first-sound change, but it is called a first-letter change.
 
-<span class="before">mite</span>
-<span class="before"><del>m</del><ins>r</ins>ite</span>
-<span class="after">right</span>
+<Step>mite</Step>
+<Step><del>m</del><ins>r</ins>ite</Step>
+<Finally>right</Finally>
 
 'Mite' to 'right' has to be a first-sound change.
 

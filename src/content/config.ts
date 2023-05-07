@@ -1,11 +1,13 @@
 import { z, defineCollection } from 'astro:content';
 
-const baseCollection = defineCollection({
+const defaultCollectionPattern = defineCollection({
     schema: z.object({
         title: z.string(),
+        brief: z.string().optional(),
     }),
 });
 
 export const collections = {
-  'base': baseCollection,
+  'base': defaultCollectionPattern,
+  'modifier': defaultCollectionPattern,
 };

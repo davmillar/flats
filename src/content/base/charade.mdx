@@ -1,17 +1,22 @@
 ---
 title: 'Charade'
+brief: 'A word or phrase is broken into two or more shorter ones.'
 ---
+import Example from '../../components/Example.astro';
+import Step from '../../components/Step.astro';
+import Finally from '../../components/Finally.astro';
+
 ## Charade
 
 A word or phrase is broken into two or more shorter ones.
 
-<span class="before">scar + city</span>
-<span class="after">scarcity</span>
+<Step>scar + city</Step>
+<Finally>scarcity</Finally>
 
 The spelling of each part remains the same, though pronunciation may change.
 
-<span class="before">outr&eacute; + ached</span>
-<span class="after">outreached</span>
+<Step>outr&eacute; + ached</Step>
+<Finally>outreached</Finally>
 
 > CHARADE (*8)
 > 
@@ -26,21 +31,21 @@ The spelling of each part remains the same, though pronunciation may change.
 > 
 > =Windjammer and Uncanny
 
-<span class="before"><label>ONE</label> goody + <label>TWO</label> era</span>
-<span class="after"><label>WHOLE</label> Goodyera</span>
+<Step><label>ONE</label> goody + <label>TWO</label> era</Step>
+<Finally><label>WHOLE</label> Goodyera</Finally>
 
 Only the enumeration of the longest word or phrase (WHOLE) is given. The solver has to figure out the lengths of the shorter parts. However, it is noted if any shorter part is capitalized, hyphenated, or a phrase.
 
 ### [Phonetic](modifier/phonetic) charade
 The pronunciation of each part remains the same, though spelling may change. 
 
-<span class="before">haste + axe</span>. 
-<span class="after">haystacks</span>
+<Step>haste + axe</Step>. 
+<Finally>haystacks</Finally>
 
 ### Reversed charade
 
 The parts are assembled and then reversed to produce the whole word or phrase. 
 
-<span class="before">red + rum</span>
-<span class="after">murder</span>
+<Step>red + rum</Step>
+<Finally>murder</Finally>
 

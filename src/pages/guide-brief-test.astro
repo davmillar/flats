@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const bases = await getCollection('base');
+
+// import
+---
+<style>
+    .toc a::after {
+        content: leader('.') target-counter(attr(data-entry), page);
+    }
+</style>
+<Layout title="What's That Flat?">
+    {
+        bases.map((entry) => (
+            <h2>{entry.data.title}</h2>
+            <p>{entry.data.brief}</p>
+        ))
+    }
+</Layout>

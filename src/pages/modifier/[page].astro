@@ -3,8 +3,8 @@ import { getCollection, getEntryBySlug } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths () {
-    const bases = await getCollection('base');
-    return bases.map((entry) => (
+    const modifiers = await getCollection('modifier');
+    return modifiers.map((entry) => (
         {
             params: {
                 page: entry.slug
@@ -18,7 +18,7 @@ if (typeof page !== 'string') {
     Astro.redirect('404');
     return;
 }
-const entry = await getEntryBySlug('base', page);
+const entry = await getEntryBySlug('modifier', page);
 if (!entry) {
     Astro.redirect('404');
     return;
