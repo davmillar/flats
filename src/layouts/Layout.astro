@@ -110,11 +110,6 @@ const { title } = Astro.props;
 	del::after {
 		content: ")";
 	}
-	ins {
-		color: green;
-		text-decoration-color: #000;
-		padding: 0.3em 0.4em;
-	}
 	.example-block {
 		line-height: 2.5;
 	}
@@ -166,10 +161,6 @@ const { title } = Astro.props;
 			padding: 1rem;
 			border-radius: 0.4rem;
 		}
-		del {
-			color: #900;
-			padding: 0.3em 0.2em;
-		}
 		.example {
 			/* display: inline-block; */
 			line-height: 1.2;
@@ -211,6 +202,14 @@ const { title } = Astro.props;
 		.finally {
 			background: rgba(var(--accent), 12%);
 			color: rgb(var(--accent));
+		}
+		.example del {
+			color: #900;
+			padding: 0.3em 0.2em;
+		}
+		.example ins {
+			color: green;
+			padding: 0.3em 0.2em;
 		}
 		.example em {
 			font-style: normal;
