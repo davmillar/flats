@@ -97,6 +97,10 @@ const { title } = Astro.props;
 	.finally label::after {
 		content: "=";
 	}
+	.example em,
+	.example strong {
+		margin: 0 2pt;
+	}
 	del {
 		text-decoration: none;
 	}
@@ -131,9 +135,6 @@ const { title } = Astro.props;
 			font-style: italic;
 			display: inline-block;
 		}
-		.example em {
-			text-decoration: underline;
-		}
 		.step:not(.printArrow)::after {
 			content: ",";
 		}
@@ -148,6 +149,9 @@ const { title } = Astro.props;
 		}
 		h2+p {
 			text-indent: 0;
+		}
+		.example em {
+			text-decoration: underline;
 		}
 		.example strong {
 			font-weight: inherit;
@@ -167,7 +171,7 @@ const { title } = Astro.props;
 			padding: 0.3em 0.2em;
 		}
 		.example {
-			display: inline-block;
+			/* display: inline-block; */
 			line-height: 1.2;
 			font-size: 0.875em;
 			font-weight: bold;
@@ -176,11 +180,6 @@ const { title } = Astro.props;
 			text-transform: uppercase;
 			background: rgba(var(--accent), 12%);
 			color: rgb(var(--accent));
-		}
-		.example em {
-			font-style: normal;
-			text-decoration: underline;
-			color: blue;
 		}
 		.step, .finally {
 			display: inline-block;
@@ -212,6 +211,11 @@ const { title } = Astro.props;
 		.finally {
 			background: rgba(var(--accent), 12%);
 			color: rgb(var(--accent));
+		}
+		.example em {
+			font-style: normal;
+			text-decoration: underline;
+			color: blue;
 		}
 		.example strong {
 			text-decoration: underline;
