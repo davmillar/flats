@@ -1,6 +1,9 @@
 ---
 import { getCollection, getEntryBySlug } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import Example from '../../components/Example.astro';
+import Step from '../../components/Step.astro';
+import Finally from '../../components/Finally.astro';
 
 export async function getStaticPaths () {
     const modifiers = await getCollection('modifier');

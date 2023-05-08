@@ -50,12 +50,6 @@ const { title } = Astro.props;
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-		line-height: 1.9;
-	}
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
@@ -142,6 +136,9 @@ const { title } = Astro.props;
 		blockquote p {
 			text-indent: 0;
 		}
+		h2 {
+			break-after: avoid;
+		}
 		h2+p {
 			text-indent: 0;
 		}
@@ -153,6 +150,12 @@ const { title } = Astro.props;
 		}
 	}
 	@media screen {
+		main {
+			margin: auto;
+			padding: 1.5rem;
+			max-width: 80ch;
+			line-height: 1.9;
+		}
 		blockquote {
 			line-height: 1.6;
 			margin: 1rem 0;
