@@ -1,7 +1,15 @@
 ---
+const { 
+    definition = null
+} = Astro.props;
 ---
 
-<span class="finally"><slot /></span>
+<span class={`finally ${definition ? ' defined' : ''}`} title={definition}><slot /></span>
+{
+    definition ? (
+        <span class="print-only">({definition})</span>
+    ) : ''
+}
 <style>
     
 </style>

@@ -1,7 +1,8 @@
 ---
+const { bad = false } = Astro.props;
 ---
 
-<span class="example"><slot /></span>
+<span class={`example ${bad ? 'bad' : ''}`}><slot /></span>
 <style>
     
 </style>

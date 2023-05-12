@@ -1,8 +1,16 @@
 ---
-const { printArrow = false } = Astro.props;
+const { 
+    printArrow = false,
+    definition = null
+} = Astro.props;
 ---
 
-<span class={`step ${printArrow ? ' printArrow' : ''}`}><slot /></span>
+<span class={`step ${printArrow ? ' printArrow' : ''} ${definition ? ' defined' : ''}`} title={definition}><slot /></span> 
+{
+    definition ? (
+        <span class="print-only">({definition})</span>
+    ) : ''
+}
 <style>
     
 </style>
