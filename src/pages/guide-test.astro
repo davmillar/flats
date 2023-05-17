@@ -3,8 +3,10 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
 const bases = await getCollection('base');
-const renderedBases = await Promise.all(
-    bases.map(async baseItem => await baseItem.render())
+const modifiers = await getCollection('modifier');
+const flatsAll = [...bases, ...modifiers].sort((a, b) => String(a.data.title).localeCompare(b.data.title));
+const renderedAll = await Promise.all(
+    flatsAll.map(async entry => await entry.render())
 );
 
 // import
@@ -16,12 +18,12 @@ const renderedBases = await Promise.all(
 </style>
 <Layout title="What's That Flat?">
     {
-        renderedBases.map(({Content}) => (<Content />))
+        renderedAll.map(({Content}) => (<Content />))
     }
     <h2>Index</h2>
     <div class="toc">
         {
-            bases.map(entry => (
+            flatsAll.map(entry => (
                 <span>
                     <b><a data-entry={entry.slug}>{entry.data.title}</a></b><br/>
                 </span>

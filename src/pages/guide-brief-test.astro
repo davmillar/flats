@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
 const bases = await getCollection('base');
+const modifiers = await getCollection('modifier');
+const flatsAll = [...bases, ...modifiers].sort((a, b) => String(a.data.title).localeCompare(b.data.title));
 
 // import
 ---
@@ -13,7 +15,7 @@ const bases = await getCollection('base');
 </style>
 <Layout title="What's That Flat?">
     {
-        bases.map((entry) => (
+        flatsAll.map((entry) => (
             <h2>{entry.data.title}</h2>
             <p>{entry.data.brief}</p>
         ))
