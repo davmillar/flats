@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const bases = await getCollection('base');
+const modifiers = await getCollection('modifier');
+const flatsAll = [...bases, ...modifiers].filter(a => a.data.introducedDate).sort((a, b) => {
+    const timeA = a.data.introducedDate?.getTime() || 0;
+    const timeB = b.data.introducedDate?.getTime() || 0;
+    if (timeA === timeB) {
+        return String(a.data.title).localeCompare(b.data.title);
+    }
+    return (timeA < timeB) ? -1 : 1;
+});
+
+// import
+---
+<style>
+    .toc a::after {
+        content: leader('.') target-counter(attr(data-entry), page);
+    }
+</style>
+<Layout title="What's That Flat?">
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Introducer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {
+                flatsAll.map((entry) => (
+                    <tr>
+                        <td>{entry.data.introducedDateText}</td>
+                        <td>{entry.data.title}</td>
+                        <td>{entry.data.introducedBy}</td>
+                    </tr>
+                ))
+            }
+        </tbody>
+    </table>
+</Layout>

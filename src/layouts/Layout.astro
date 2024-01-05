@@ -175,6 +175,20 @@ const { title } = Astro.props;
 			padding: 1rem;
 			border-radius: 0.4rem;
 		}
+		table {
+			line-height: 1.6;
+			margin: 1rem auto;
+			border: 1px solid rgba(var(--accent), 25%);
+			background-color: white;
+			padding: 1rem;
+			border-radius: 0.4rem;
+		}
+		th, td {
+			padding: .2em .5em;
+		}
+		tr:nth-child(n+1) td {
+			border-top: 1px solid rgba(var(--accent), 25%);
+		}
 		.example {
 			/* display: inline-block; */
 			line-height: 1.2;
