@@ -31,6 +31,7 @@ const { title } = Astro.props;
 <style is:global>
 	:root {
 		--accent: 124, 58, 237;
+		--accent-caution: 173, 138, 0;
 		--accent-bad: 237, 91, 91;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
 		--reverse-gradient: linear-gradient(95deg, green, red 100%);
@@ -92,8 +93,12 @@ const { title } = Astro.props;
 	}
 	.example label,
 	.step label,
-	.finally label {
+	.finally label,
+	.example cite,
+	.step cite,
+	.finally cite {
 		font-weight: 400;
+		font-style: normal;
 	}
 	.step label::after,
 	.finally label::after {
@@ -205,6 +210,12 @@ const { title } = Astro.props;
 		.example.bad .finally {
 			background: rgba(var(--accent-bad), 12%);
 			color: rgb(var(--accent-bad));
+		}
+		.example.caution,
+		.example.caution .step,
+		.example.caution .finally {
+			background: rgba(var(--accent-caution), 12%);
+			color: rgb(var(--accent-caution));
 		}
 		.step, .finally {
 			display: inline-block;

@@ -1,8 +1,8 @@
 ---
-const { bad = false } = Astro.props;
+const { bad = false, caution = false } = Astro.props;
 ---
 
-<span class={`example ${bad ? 'bad' : ''}`}><slot /></span>
+<span class={`example ${bad ? 'bad' : ''} ${caution ? 'caution' : ''}`}><slot /></span>
 <style>
     
 </style>
